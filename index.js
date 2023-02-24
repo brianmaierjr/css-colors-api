@@ -51,6 +51,10 @@ router.get("/:name", (req, res, next) => {
 
 app.use("/api", router);
 
+// use cors to allow cross origin resource sharing
+const cors = require("cors");
+app.use(cors());
+
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`);
 });
