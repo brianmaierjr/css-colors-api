@@ -1,0 +1,16 @@
+{
+	"name": "csscolorsapi",
+	"version": "1.0.0",
+	"description": "CSS Color Names API",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Brian Maier Jr.",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.18.2",
+		"nodemon": "^2.0.20"
+	}
+}
