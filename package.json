@@ -1,6 +1,9 @@
 {
 	"name": "csscolorsapi",
 	"version": "1.0.0",
+	"engines": {
+		"node": ">=16.18.1"
+	},
 	"description": "CSS Color Names API",
 	"main": "index.js",
 	"scripts": {
