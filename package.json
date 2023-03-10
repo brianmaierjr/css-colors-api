@@ -5,9 +5,9 @@
 		"node": ">=16.18.1"
 	},
 	"description": "CSS Color Names API",
-	"main": "index.js",
+	"main": "api/index.js",
 	"scripts": {
-		"dev": "nodemon index.js",
+		"dev": "nodemon api/index.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "Brian Maier Jr.",
