@@ -1,15 +1,14 @@
 const express = require("express");
-const { v1 } = require("uuid");
 const app = express();
 const router = express.Router();
 const port = 4000;
-let colorRepo = require("../repos/colorRepo");
+let colorRepo = require("./repos/colorRepo");
 
 // use cors to allow cross origin resource sharing
 const cors = require("cors");
 app.use(cors());
 
-router.get("/api", (req, res) => {
+router.get("/", (req, res) => {
 	colorRepo.get(
 		function (data) {
 			res.status(200).json({
@@ -53,6 +52,8 @@ router.get("/:name", (req, res, next) => {
 		}
 	);
 });
+
+app.use("/api", router);
 
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`);

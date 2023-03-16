@@ -1,13 +1,27 @@
 const express = require("express");
-
 const app = express();
 
+const data = [
+	{
+		name: "blue",
+		hex: "#0000FF",
+	},
+	{
+		name: "red",
+		hex: "#FF0000",
+	},
+];
+
 app.get("/", (req, res) => {
-	res.send("Express on Vercel");
+	res.sendFile(__dirname + "/index.html");
 });
 
-app.listen(5000, () => {
-	console.log("Running on port 5000.");
+app.get("/api", (req, res) => {
+	res.send(data);
+});
+
+app.listen(4000, () => {
+	console.log("Running on port 4000.");
 });
 
 // Export the Express API
