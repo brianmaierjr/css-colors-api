@@ -57,9 +57,6 @@ app.get("/api/colors/:name", (req, res, next) => {
 	);
 });
 
-// /colors/groups gets all color groups
-// /colors/groups/{name} gets all colors in a group
-
 app.listen(4000, () => {
 	console.log("Running on port 4000.");
 });

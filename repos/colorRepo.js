@@ -17,7 +17,9 @@ let colorRepo = {
 			if (err) {
 				reject(err);
 			} else {
-				let colors = JSON.parse(data).find((c) => c.name === name);
+				let colors = JSON.parse(data).find(
+					(c) => c.name.toLowerCase() === name.toLowerCase()
+				);
 				resolve(colors);
 			}
 		});
