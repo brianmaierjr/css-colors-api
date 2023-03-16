@@ -10,6 +10,7 @@ app.get("/", (req, res) => {
 	res.sendFile(__dirname + "/index.html");
 });
 
+// /colors/ gets all colors
 app.get("/api/colors", (req, res, next) => {
 	colorRepo.get(
 		function (data) {
@@ -26,8 +27,36 @@ app.get("/api/colors", (req, res, next) => {
 	);
 });
 
-// /colors/ gets all colors
 // /colors/{name} gets a color by name
+app.get("/api/colors/:name", (req, res, next) => {
+	colorRepo.getByName(
+		req.params.name,
+		function (data) {
+			if (data) {
+				res.status(200).json({
+					status: 200,
+					statusText: "OK",
+					message: "Single color retrieved.",
+					data: data,
+				});
+			} else {
+				res.status(404).json({
+					status: 404,
+					statusText: "Not Found",
+					message: "The color could not be found.",
+					error: {
+						code: "NOT_FOUND",
+						message: `Color ${req.params.name} could not be found.`,
+					},
+				});
+			}
+		},
+		function (err) {
+			next(err);
+		}
+	);
+});
+
 // /colors/groups gets all color groups
 // /colors/groups/{name} gets all colors in a group
 
