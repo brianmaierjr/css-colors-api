@@ -6,6 +6,8 @@ let colorRepo = require("./repos/colorRepo");
 const cors = require("cors");
 app.use(cors());
 
+app.use(express.static("data"));
+
 app.get("/", (req, res) => {
 	res.sendFile(__dirname + "/index.html");
 });
