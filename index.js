@@ -1,3 +1,19 @@
+require("dotenv").config();
+
+const mongoose = require("mongoose");
+const mongoString = process.env.DATABASE_URL;
+
+mongoose.connect(mongoString);
+const db = mongoose.connection;
+
+db.on("error", (error) => {
+	console.log(error);
+});
+
+db.once("connected", () => {
+	console.log("Database Connected");
+});
+
 const express = require("express");
 const app = express();
 let colorRepo = require("./repos/colorRepo");
@@ -5,8 +21,6 @@ let colorRepo = require("./repos/colorRepo");
 // use cors to allow cross origin resource sharing
 const cors = require("cors");
 app.use(cors());
-
-app.use(express.static("data"));
 
 app.get("/", (req, res) => {
 	res.sendFile(__dirname + "/index.html");
@@ -20,7 +34,7 @@ app.get("/api/colors", (req, res, next) => {
 				status: 200,
 				statusText: "OK",
 				message: "All css colors retrieved.",
-				data: data,
+				colors: data,
 			});
 		},
 		function (err) {
