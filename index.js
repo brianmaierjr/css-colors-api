@@ -23,7 +23,7 @@ const cors = require("cors");
 app.use(cors());
 
 app.get("/", (req, res) => {
-	res.sendFile(__dirname + "/index.html");
+	res.sendFile(__dirname + "/public/index.html");
 });
 
 // /colors/ gets all colors
@@ -76,6 +76,8 @@ app.get("/api/colors/:name", (req, res, next) => {
 app.listen(4000, () => {
 	console.log("Running on port 4000.");
 });
+
+app.use(express.static("public"));
 
 // Export the Express API
 module.exports = app;
