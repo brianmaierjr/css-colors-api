@@ -1,22 +1,22 @@
-require("dotenv").config();
+// require("dotenv").config();
 
-const mongoose = require("mongoose");
-const mongoString = process.env.DATABASE_URL;
+// const mongoose = require("mongoose");
+// const mongoString = process.env.DATABASE_URL;
 
-mongoose.connect(mongoString);
-const db = mongoose.connection;
+// mongoose.connect(mongoString);
+// const db = mongoose.connection;
 
-db.on("error", (error) => {
-	console.log(error);
-});
+// db.on("error", (error) => {
+// 	console.log(error);
+// });
 
-db.once("connected", () => {
-	console.log("Database Connected");
-});
+// db.once("connected", () => {
+// 	console.log("Database Connected");
+// });
 
 const express = require("express");
 const app = express();
-let colorRepo = require("./repos/colorRepo");
+let colorRepo = require("./public/repos/colorRepo");
 
 // use cors to allow cross origin resource sharing
 const cors = require("cors");
@@ -63,6 +63,36 @@ app.get("/api/colors/:name", (req, res, next) => {
 					error: {
 						code: "NOT_FOUND",
 						message: `Color ${req.params.name} could not be found.`,
+					},
+				});
+			}
+		},
+		function (err) {
+			next(err);
+		}
+	);
+});
+
+// /colors/group/{name} gets all colors in a group
+app.get("/api/colors/group/:name", (req, res, next) => {
+	colorRepo.getByGroup(
+		req.params.name,
+		function (data) {
+			if (data) {
+				res.status(200).json({
+					status: 200,
+					statusText: "OK",
+					message: `All ${req.params.name} colors retrieved.`,
+					data: data,
+				});
+			} else {
+				res.status(404).json({
+					status: 404,
+					statusText: "Not Found",
+					message: `Color group ${req.params.name} could not be found.`,
+					error: {
+						code: "NOT_FOUND",
+						message: `Color group ${req.params.name} could not be found.`,
 					},
 				});
 			}
