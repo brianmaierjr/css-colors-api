@@ -16,7 +16,7 @@
 
 const express = require("express");
 const app = express();
-let colorRepo = require("./public/repos/colorRepo");
+let colorRepo = require("./repos/colorRepo");
 
 // use cors to allow cross origin resource sharing
 const cors = require("cors");
