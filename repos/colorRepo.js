@@ -1,5 +1,5 @@
 let fs = require("fs");
-let FILE_NAME = "./data/colors.json";
+let FILE_NAME = "data/colors.json";
 
 let colorRepo = {
 	get: function (resolve, reject) {
