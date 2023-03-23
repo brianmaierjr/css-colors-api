@@ -17,14 +17,11 @@
 const express = require("express");
 const app = express();
 let colorRepo = require("./repos/colorRepo");
+const path = require("path");
 
 // use cors to allow cross origin resource sharing
 const cors = require("cors");
 app.use(cors());
-
-app.get("/", (req, res) => {
-	res.sendFile(__dirname + "/public/index.html");
-});
 
 // /colors/ gets all colors
 app.get("/api/colors", (req, res, next) => {
@@ -109,7 +106,7 @@ app.listen(4000, () => {
 	console.log("Running on port 4000.");
 });
 
-app.use(express.static("public"));
+app.use(express.static(path.resolve("./public")));
 
 // Export the Express API
 module.exports = app;

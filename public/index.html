@@ -5,25 +5,36 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>CSS Colors REST API</title>
-		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="./css/style.css" />
 	</head>
 	<body>
 		<header>
-			<h1>CSS Colors REST API</h1>
-			<p class="text-lg">A simple, RESTful API for all 148 CSS Colors.</p>
-			<p>
-				This is a consumption-only API — only the HTTP GET method is
-				available on resources. No authentication is required to access
-				this API, and all resources are fully open and available.
-			</p>
+			<div class="wrapper flow">
+				<h1>CSS Colors REST API</h1>
+				<p class="text-lg">
+					A simple, RESTful API for all 148 CSS Colors.
+				</p>
+				<p>
+					This is a consumption-only API — only the HTTP GET method is
+					available on resources. No authentication is required to
+					access this API, and all resources are fully open and
+					available.
+				</p>
+			</div>
 		</header>
 		<main>
 			<section>
-				<h2>GET All Colors</h2>
-				<pre>https://css-colors-api.vercel.app/api/colors <button>Copy</button></pre>
+				<div class="wrapper">
+					<h2>Try it out!</h2>
+				</div>
+			</section>
+			<section>
+				<div class="wrapper">
+					<h2>GET All Colors</h2>
+					<pre>https://css-colors-api.vercel.app/api/colors <button>Copy</button></pre>
 
-				<h3>Response</h3>
-				<pre>
+					<h3>Response</h3>
+					<pre>
 					{
 						"status": 200,
 						"statusText": "OK",
@@ -46,57 +57,59 @@
 						]
 					}
 				</pre
-				>
+					>
 
-				<h3>Colors</h3>
-				<!-- Table with three columns -->
-				<table>
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>Description</th>
-							<th>Type</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Name</td>
-							<td>Maecenas faucibus mollis interdum.</td>
-							<td>String</td>
-						</tr>
-						<tr>
-							<td>Theme</td>
-							<td>Maecenas faucibus mollis interdum.</td>
-							<td>String</td>
-						</tr>
-						<tr>
-							<td>Group</td>
-							<td>Maecenas faucibus mollis interdum.</td>
-							<td>String</td>
-						</tr>
-						<tr>
-							<td>Hex</td>
-							<td>Maecenas faucibus mollis interdum.</td>
-							<td>String</td>
-						</tr>
-						<tr>
-							<td>RGB</td>
-							<td>Maecenas faucibus mollis interdum.</td>
-							<td>String</td>
-						</tr>
-					</tbody>
-				</table>
+					<h3>Colors</h3>
+					<!-- Table with three columns -->
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Type</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Name</td>
+								<td>Maecenas faucibus mollis interdum.</td>
+								<td>String</td>
+							</tr>
+							<tr>
+								<td>Theme</td>
+								<td>Maecenas faucibus mollis interdum.</td>
+								<td>String</td>
+							</tr>
+							<tr>
+								<td>Group</td>
+								<td>Maecenas faucibus mollis interdum.</td>
+								<td>String</td>
+							</tr>
+							<tr>
+								<td>Hex</td>
+								<td>Maecenas faucibus mollis interdum.</td>
+								<td>String</td>
+							</tr>
+							<tr>
+								<td>RGB</td>
+								<td>Maecenas faucibus mollis interdum.</td>
+								<td>String</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</section>
 			<section>
-				<h2>GET A Single Color</h2>
-				<pre>https://css-colors-api.vercel.app/api/colors/:color <button>Copy</button></pre>
-				<p>
-					For a full list of colors visit
-					<a href="https://147colors.com" target="_blank"></a>
-				</p>
+				<div class="wrapper">
+					<h2>GET A Single Color</h2>
+					<pre>https://css-colors-api.vercel.app/api/colors/:color <button>Copy</button></pre>
+					<p>
+						For a full list of colors visit
+						<a href="https://147colors.com" target="_blank"></a>
+					</p>
 
-				<h3>Response</h3>
-				<pre>
+					<h3>Response</h3>
+					<pre>
 					{
 						"name": "AliceBlue",
 						"theme": "light",
@@ -105,57 +118,59 @@
 						"rgb": "240,248,255"
 					},
 				</pre
-				>
+					>
 
-				<h3>Color</h3>
-				<!-- Table with three columns -->
-				<table>
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>Description</th>
-							<th>Type</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Name</td>
-							<td>Maecenas faucibus mollis interdum.</td>
-							<td>String</td>
-						</tr>
-						<tr>
-							<td>Theme</td>
-							<td>Maecenas faucibus mollis interdum.</td>
-							<td>String</td>
-						</tr>
-						<tr>
-							<td>Group</td>
-							<td>Maecenas faucibus mollis interdum.</td>
-							<td>String</td>
-						</tr>
-						<tr>
-							<td>Hex</td>
-							<td>Maecenas faucibus mollis interdum.</td>
-							<td>String</td>
-						</tr>
-						<tr>
-							<td>RGB</td>
-							<td>Maecenas faucibus mollis interdum.</td>
-							<td>String</td>
-						</tr>
-					</tbody>
-				</table>
+					<h3>Color</h3>
+					<!-- Table with three columns -->
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Type</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Name</td>
+								<td>Maecenas faucibus mollis interdum.</td>
+								<td>String</td>
+							</tr>
+							<tr>
+								<td>Theme</td>
+								<td>Maecenas faucibus mollis interdum.</td>
+								<td>String</td>
+							</tr>
+							<tr>
+								<td>Group</td>
+								<td>Maecenas faucibus mollis interdum.</td>
+								<td>String</td>
+							</tr>
+							<tr>
+								<td>Hex</td>
+								<td>Maecenas faucibus mollis interdum.</td>
+								<td>String</td>
+							</tr>
+							<tr>
+								<td>RGB</td>
+								<td>Maecenas faucibus mollis interdum.</td>
+								<td>String</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</section>
 			<section>
-				<h2>GET A Group According to Theme</h2>
-				<pre>https://css-colors-api.vercel.app/api/colors/:theme <button>Copy</button></pre>
-				<p>
-					For a full list of colors visit
-					<a href="https://147colors.com" target="_blank"></a>
-				</p>
+				<div class="wrapper">
+					<h2>GET A Group According to Theme</h2>
+					<pre>https://css-colors-api.vercel.app/api/colors/:theme <button>Copy</button></pre>
+					<p>
+						For a full list of colors visit
+						<a href="https://147colors.com" target="_blank"></a>
+					</p>
 
-				<h3>Response</h3>
-				<pre>
+					<h3>Response</h3>
+					<pre>
 					{
 						"name": "AliceBlue",
 						"theme": "light",
@@ -164,18 +179,20 @@
 						"rgb": "240,248,255"
 					},
 				</pre
-				>
+					>
+				</div>
 			</section>
 			<section>
-				<h2>GET A Group According to Color Group</h2>
-				<pre>https://css-colors-api.vercel.app/api/colors/:group <button>Copy</button></pre>
-				<p>
-					For a full list of colors visit
-					<a href="https://147colors.com" target="_blank"></a>
-				</p>
+				<div class="wrapper">
+					<h2>GET A Group According to Color Group</h2>
+					<pre>https://css-colors-api.vercel.app/api/colors/:group <button>Copy</button></pre>
+					<p>
+						For a full list of colors visit
+						<a href="https://147colors.com" target="_blank"></a>
+					</p>
 
-				<h3>Response</h3>
-				<pre>
+					<h3>Response</h3>
+					<pre>
 					{
 						"name": "AliceBlue",
 						"theme": "light",
@@ -184,18 +201,23 @@
 						"rgb": "240,248,255"
 					},
 				</pre
-				>
+					>
+				</div>
 			</section>
 		</main>
 		<footer>
-			<p>
-				Created by
-				<a href="https://brianmaierjr.com" target="_blank"
-					>Brian Maier Jr.</a
-				>
-				and used on
-				<a href="https://147colors.com" target="_blank">147 Colors</a>
-			</p>
+			<div class="wrapper">
+				<p>
+					Created by
+					<a href="https://brianmaierjr.com" target="_blank"
+						>Brian Maier Jr.</a
+					>
+					and used on
+					<a href="https://147colors.com" target="_blank"
+						>147 Colors</a
+					>
+				</p>
+			</div>
 		</footer>
 	</body>
 </html>
