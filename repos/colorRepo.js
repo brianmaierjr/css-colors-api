@@ -1,5 +1,6 @@
 let fs = require("fs");
-let FILE_NAME = "data/colors.json";
+const path = require("path");
+let FILE_NAME = path.join(__dirname, "../data/colors.json");
 
 let colorRepo = {
 	get: function (resolve, reject) {
