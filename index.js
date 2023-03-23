@@ -34,6 +34,7 @@ app.get("/api/colors", (req, res, next) => {
 				status: 200,
 				statusText: "OK",
 				message: "All css colors retrieved.",
+				count: data.length,
 				colors: data,
 			});
 		},
@@ -83,6 +84,7 @@ app.get("/api/colors/group/:name", (req, res, next) => {
 					status: 200,
 					statusText: "OK",
 					message: `All ${req.params.name} colors retrieved.`,
+					count: data.length,
 					data: data,
 				});
 			} else {
