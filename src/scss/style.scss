@@ -97,9 +97,39 @@ a {
 	margin-top: var(--flow-space, 1em);
 }
 
-.flow {
-	* {
-		max-width: 65ch;
-		margin-inline: auto;
+pre {
+	display: block;
+	background-color: var(--surface3);
+	padding: var(--space-s);
+	border-radius: var(--space-2xs);
+}
+
+main {
+	padding-block: var(--space-2xl);
+	// --flow-space: 2em;
+}
+
+table {
+	border-collapse: collapse;
+
+	th {
+		font-weight: bold;
+	}
+
+	td,
+	th {
+		padding: var(--space-xs) var(--space-s);
+	}
+}
+
+tbody {
+	tr:nth-child(even) {
+		background-color: var(--surface3);
+	}
+}
+
+thead {
+	tr {
+		border-bottom: solid var(--space-3xs) var(--surface3);
 	}
 }

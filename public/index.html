@@ -6,8 +6,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>CSS Colors REST API</title>
 		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/prism.css" />
+		<link rel="icon" type="image/ico" href="/favicon.ico" />
 	</head>
 	<body>
+		<link
+			rel="preload"
+			href="/img/header.svg"
+			as="image"
+			media="(max-width: 100em)"
+			fetchpriority="high"
+		/>
 		<header>
 			<div class="wrapper flow">
 				<h1>CSS Colors REST API</h1>
@@ -22,42 +31,43 @@
 				</p>
 			</div>
 		</header>
-		<main>
+		<main class="flow">
 			<section>
-				<div class="wrapper">
+				<div class="wrapper flow">
 					<h2>Try it out!</h2>
 				</div>
 			</section>
 			<section>
-				<div class="wrapper">
+				<div class="wrapper flow">
 					<h2>GET All Colors</h2>
-					<pre>https://css-colors-api.vercel.app/api/colors <button>Copy</button></pre>
+					<pre><code class="language-html">https://css-colors-api.vercel.app/api/colors</code> <button>Copy</button></pre>
 
 					<h3>Response</h3>
 					<pre>
-					{
-						"status": 200,
-						"statusText": "OK",
-						"message": "All css colors retrieved.",
-						"colors": [
-							{
-							"name": "AliceBlue",
-							"theme": "light",
-							"group": "Gray",
-							"hex": "F0F8FF",
-							"rgb": "240,248,255"
-							},
-							{
-							"name": "AntiqueWhite",
-							"theme": "light",
-							"group": "Gray",
-							"hex": "FAEBD7",
-							"rgb": "250,235,215"
-							},
-						]
-					}
-				</pre
-					>
+						<code class="language-json">
+{
+	"status": 200,
+	"statusText": "OK",
+	"message": "All css colors retrieved.",
+	"colors": [
+		{
+		"name": "AliceBlue",
+		"theme": "light",
+		"group": "Gray",
+		"hex": "F0F8FF",
+		"rgb": "240,248,255"
+		},
+		{
+		"name": "AntiqueWhite",
+		"theme": "light",
+		"group": "Gray",
+		"hex": "FAEBD7",
+		"rgb": "250,235,215"
+		},
+	]
+}
+						</code>
+					</pre>
 
 					<h3>Colors</h3>
 					<!-- Table with three columns -->
@@ -219,5 +229,6 @@
 				</p>
 			</div>
 		</footer>
+		<script src="./js/prism.js"></script>
 	</body>
 </html>

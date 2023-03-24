@@ -101,6 +101,14 @@ h1 {
   font-size: var(--step-6);
 }
 
+h2 {
+  font-size: var(--step-5);
+}
+
+h3 {
+  font-size: var(--step-4);
+}
+
 .noList {
   list-style: none;
   margin: 0;
@@ -242,9 +250,34 @@ a {
   margin-top: var(--flow-space, 1em);
 }
 
-.flow * {
-  max-width: 65ch;
-  margin-inline: auto;
+pre {
+  display: block;
+  background-color: var(--surface3);
+  padding: var(--space-s);
+  border-radius: var(--space-2xs);
+}
+
+main {
+  padding-block: var(--space-2xl);
+}
+
+table {
+  border-collapse: collapse;
+}
+table th {
+  font-weight: bold;
+}
+table td,
+table th {
+  padding: var(--space-xs) var(--space-s);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--surface3);
+}
+
+thead tr {
+  border-bottom: solid var(--space-3xs) var(--surface3);
 }
 
 /*# sourceMappingURL=style.css.map */
