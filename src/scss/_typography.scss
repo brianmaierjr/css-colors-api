@@ -30,14 +30,32 @@ h6 {
 	font-weight: 200;
 }
 
-h1 {
+h1,
+.h1 {
 	font-size: var(--step-6);
 }
 
-h2 {
+h2,
+.h2 {
 	font-size: var(--step-5);
 }
 
-h3 {
+h3,
+.h3 {
 	font-size: var(--step-4);
+}
+
+h4,
+.h4 {
+	font-size: var(--step-3);
+}
+
+h5,
+.h5 {
+	font-size: var(--step-2);
+}
+
+h6,
+.h6 {
+	font-size: var(--step-1);
 }

@@ -5,7 +5,7 @@
 		"node": ">=16.18.1"
 	},
 	"description": "CSS Color Names API",
-	"main": "api/index.js",
+	"main": "index.js",
 	"scripts": {
 		"dev": "nodemon . & npm run scss",
 		"scss": "sass --watch src/scss/style.scss:public/css/style.css",

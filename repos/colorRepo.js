@@ -39,19 +39,14 @@ let colorRepo = {
 		});
 	},
 
-	search: function (searchObject, resolve, reject) {
+	getByTheme: function (theme, resolve, reject) {
 		fs.readFile(FILE_NAME, function (err, data) {
 			if (err) {
 				reject(err);
 			} else {
-				let colors = JSON.parse(data);
-				if (searchObject) {
-					if (searchObject.name) {
-						colors = colors.filter(function (color) {
-							return color.name.indexOf(searchObject.name) > -1;
-						});
-					}
-				}
+				let colors = JSON.parse(data).filter(
+					(c) => c.theme.toLowerCase() === theme.toLowerCase()
+				);
 				resolve(colors);
 			}
 		});

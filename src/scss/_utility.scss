@@ -28,3 +28,19 @@
 .text-lg {
 	font-size: var(--step-2);
 }
+
+.flow-space--2xl {
+	--flow-space: 8em;
+}
+
+.flow-space--base {
+	--flow-space: 1em;
+}
+
+.flow-space--sm {
+	--flow-space: 0.75em;
+}
+
+.flow-space--xs {
+	--flow-space: 0.5em;
+}

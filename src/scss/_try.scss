@@ -1,0 +1,52 @@
+.try {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	> * {
+		padding: var(--space-2xs);
+	}
+
+	label {
+		background-color: rgba(0, 0, 0, 0.2);
+		color: lightgray;
+		border-radius: var(--space-2xs) 0 0 var(--space-2xs);
+	}
+
+	input {
+		border: none;
+	}
+
+	button {
+		background-color: rebeccapurple;
+		color: white;
+		border-radius: 0 var(--space-2xs) var(--space-2xs) 0;
+		border: none;
+		padding-inline: var(--space-m);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__buttons {
+		button {
+			background-color: dodgerblue;
+			border-radius: var(--space-2xs);
+			border: none;
+			padding-inline: var(--space-2xs);
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			font-size: var(--step--1);
+			color: white;
+
+			&:nth-child(2) {
+				background-color: rebeccapurple;
+			}
+
+			&:last-child {
+				background-color: darkslategrey;
+			}
+		}
+	}
+}

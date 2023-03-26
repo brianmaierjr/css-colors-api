@@ -76,13 +76,13 @@ app.get("/api/colors/group/:name", (req, res, next) => {
 	colorRepo.getByGroup(
 		req.params.name,
 		function (data) {
-			if (data) {
+			if (data.length > 0) {
 				res.status(200).json({
 					status: 200,
 					statusText: "OK",
 					message: `All ${req.params.name} colors retrieved.`,
 					count: data.length,
-					data: data,
+					colors: data,
 				});
 			} else {
 				res.status(404).json({
@@ -92,6 +92,37 @@ app.get("/api/colors/group/:name", (req, res, next) => {
 					error: {
 						code: "NOT_FOUND",
 						message: `Color group ${req.params.name} could not be found.`,
+					},
+				});
+			}
+		},
+		function (err) {
+			next(err);
+		}
+	);
+});
+
+// /colors/theme/{name} gets all colors in a theme
+app.get("/api/colors/theme/:name", (req, res, next) => {
+	colorRepo.getByTheme(
+		req.params.name,
+		function (data) {
+			if (data.length > 0) {
+				res.status(200).json({
+					status: 200,
+					statusText: "OK",
+					message: `All ${req.params.name} theme colors retrieved.`,
+					count: data.length,
+					colors: data,
+				});
+			} else {
+				res.status(404).json({
+					status: 404,
+					statusText: "Not Found",
+					message: `Colors for theme ${req.params.name} could not be found.`,
+					error: {
+						code: "NOT_FOUND",
+						message: `Colors for theme ${req.params.name} could not be found.`,
 					},
 				});
 			}
