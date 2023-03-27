@@ -1,12 +1,17 @@
 header {
 	background-image: url("../img/header.svg");
-	background-size: cover;
+	background-size: 75em auto;
+	background-position: top center;
 	padding-block: var(--space-2xl-3xl) calc(var(--space-2xl-3xl) * 2);
 	min-height: 60vh;
 	text-align: center;
 	display: grid;
 	place-content: center;
 	position: relative;
+
+	@media (min-width: 100em) {
+		background-size: 100em auto;
+	}
 
 	&:before {
 		content: "";

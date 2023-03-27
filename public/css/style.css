@@ -176,13 +176,19 @@ h6,
 
 header {
   background-image: url("../img/header.svg");
-  background-size: cover;
+  background-size: 75em auto;
+  background-position: top center;
   padding-block: var(--space-2xl-3xl) calc(var(--space-2xl-3xl) * 2);
   min-height: 60vh;
   text-align: center;
   display: grid;
   place-content: center;
   position: relative;
+}
+@media (min-width: 100em) {
+  header {
+    background-size: 100em auto;
+  }
 }
 header:before {
   content: "";
@@ -248,58 +254,8 @@ footer {
 .try__buttons button:last-child {
   background-color: darkslategrey;
 }
-
-:root {
-  --surface1: #111111;
-  --surface2: #000000;
-  --surface3: #ffffff0d;
-  --surface-reverse: white;
-  --text-color: white;
-  --text-color-revers: #111111;
-  --link-color: cadetblue;
-  /* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1140,20,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
-  --step--2: clamp(0.79rem, calc(0.79rem + 0.02vw), 0.8rem);
-  --step--1: clamp(0.89rem, calc(0.85rem + 0.22vw), 1rem);
-  --step-0: clamp(1rem, calc(0.9rem + 0.49vw), 1.25rem);
-  --step-1: clamp(1.13rem, calc(0.95rem + 0.85vw), 1.56rem);
-  --step-2: clamp(1.27rem, calc(1rem + 1.34vw), 1.95rem);
-  --step-3: clamp(1.42rem, calc(1.03rem + 1.99vw), 2.44rem);
-  --step-4: clamp(1.6rem, calc(1.04rem + 2.83vw), 3.05rem);
-  --step-5: clamp(1.8rem, calc(1.02rem + 3.93vw), 3.82rem);
-  --step-6: clamp(2.03rem, calc(0.96rem + 5.35vw), 4.77rem);
-  --step-7: clamp(2.28rem, calc(0.84rem + 7.18vw), 5.96rem);
-  /* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1140,20,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
-  --space-3xs: clamp(0.25rem, calc(0.23rem + 0.12vw), 0.31rem);
-  --space-2xs: clamp(0.5rem, calc(0.45rem + 0.24vw), 0.63rem);
-  --space-xs: clamp(0.75rem, calc(0.68rem + 0.37vw), 0.94rem);
-  --space-s: clamp(1rem, calc(0.9rem + 0.49vw), 1.25rem);
-  --space-m: clamp(1.5rem, calc(1.35rem + 0.73vw), 1.88rem);
-  --space-l: clamp(2rem, calc(1.8rem + 0.98vw), 2.5rem);
-  --space-xl: clamp(3rem, calc(2.71rem + 1.46vw), 3.75rem);
-  --space-2xl: clamp(4rem, calc(3.61rem + 1.95vw), 5rem);
-  --space-3xl: clamp(6rem, calc(5.41rem + 2.93vw), 7.5rem);
-  /* One-up pairs */
-  --space-3xs-2xs: clamp(0.25rem, calc(0.1rem + 0.73vw), 0.63rem);
-  --space-2xs-xs: clamp(0.5rem, calc(0.33rem + 0.85vw), 0.94rem);
-  --space-xs-s: clamp(0.75rem, calc(0.55rem + 0.98vw), 1.25rem);
-  --space-s-m: clamp(1rem, calc(0.66rem + 1.71vw), 1.88rem);
-  --space-m-l: clamp(1.5rem, calc(1.11rem + 1.95vw), 2.5rem);
-  --space-l-xl: clamp(2rem, calc(1.32rem + 3.41vw), 3.75rem);
-  --space-xl-2xl: clamp(3rem, calc(2.22rem + 3.9vw), 5rem);
-  --space-2xl-3xl: clamp(4rem, calc(2.63rem + 6.83vw), 7.5rem);
-  /* Custom pairs */
-  --space-s-l: clamp(1rem, calc(0.41rem + 2.93vw), 2.5rem);
-}
-@media (prefers-color-scheme: light) {
-  :root {
-    --surface1: whitesmoke;
-    --surface2: white;
-    --surface3: #e1e1e1;
-    --surface-reverse: #111111;
-    --text-color: #111111;
-    --text-color-reverse: white;
-    --link-color: cadetblue;
-  }
+.try__response {
+  display: none;
 }
 
 body {
@@ -330,6 +286,10 @@ a {
 }
 .section--small {
   padding-block: var(--space-s-l);
+}
+
+a:hover, a:focus {
+  text-decoration: none;
 }
 
 .flow > * + * {
@@ -415,7 +375,7 @@ thead tr {
 /* Works on Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--surface2) var(--surface-reverse);
+  scrollbar-color: cadetBlue var(--surface-reverse);
 }
 
 /* Works on Chrome, Edge, and Safari */
@@ -428,8 +388,61 @@ thead tr {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--surface1);
+  background-color: cadetblue;
   border-radius: 0;
+}
+
+:root {
+  --surface1: #111111;
+  --surface2: #000000;
+  --surface3: #ffffff0d;
+  --surface-reverse: white;
+  --text-color: white;
+  --text-color-revers: #111111;
+  --link-color: cadetblue;
+  /* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1140,20,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+  --step--2: clamp(0.79rem, calc(0.79rem + 0.02vw), 0.8rem);
+  --step--1: clamp(0.89rem, calc(0.85rem + 0.22vw), 1rem);
+  --step-0: clamp(1rem, calc(0.9rem + 0.49vw), 1.25rem);
+  --step-1: clamp(1.13rem, calc(0.95rem + 0.85vw), 1.56rem);
+  --step-2: clamp(1.27rem, calc(1rem + 1.34vw), 1.95rem);
+  --step-3: clamp(1.42rem, calc(1.03rem + 1.99vw), 2.44rem);
+  --step-4: clamp(1.6rem, calc(1.04rem + 2.83vw), 3.05rem);
+  --step-5: clamp(1.8rem, calc(1.02rem + 3.93vw), 3.82rem);
+  --step-6: clamp(2.03rem, calc(0.96rem + 5.35vw), 4.77rem);
+  --step-7: clamp(2.28rem, calc(0.84rem + 7.18vw), 5.96rem);
+  /* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1140,20,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+  --space-3xs: clamp(0.25rem, calc(0.23rem + 0.12vw), 0.31rem);
+  --space-2xs: clamp(0.5rem, calc(0.45rem + 0.24vw), 0.63rem);
+  --space-xs: clamp(0.75rem, calc(0.68rem + 0.37vw), 0.94rem);
+  --space-s: clamp(1rem, calc(0.9rem + 0.49vw), 1.25rem);
+  --space-m: clamp(1.5rem, calc(1.35rem + 0.73vw), 1.88rem);
+  --space-l: clamp(2rem, calc(1.8rem + 0.98vw), 2.5rem);
+  --space-xl: clamp(3rem, calc(2.71rem + 1.46vw), 3.75rem);
+  --space-2xl: clamp(4rem, calc(3.61rem + 1.95vw), 5rem);
+  --space-3xl: clamp(6rem, calc(5.41rem + 2.93vw), 7.5rem);
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, calc(0.1rem + 0.73vw), 0.63rem);
+  --space-2xs-xs: clamp(0.5rem, calc(0.33rem + 0.85vw), 0.94rem);
+  --space-xs-s: clamp(0.75rem, calc(0.55rem + 0.98vw), 1.25rem);
+  --space-s-m: clamp(1rem, calc(0.66rem + 1.71vw), 1.88rem);
+  --space-m-l: clamp(1.5rem, calc(1.11rem + 1.95vw), 2.5rem);
+  --space-l-xl: clamp(2rem, calc(1.32rem + 3.41vw), 3.75rem);
+  --space-xl-2xl: clamp(3rem, calc(2.22rem + 3.9vw), 5rem);
+  --space-2xl-3xl: clamp(4rem, calc(2.63rem + 6.83vw), 7.5rem);
+  /* Custom pairs */
+  --space-s-l: clamp(1rem, calc(0.41rem + 2.93vw), 2.5rem);
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --surface1: whitesmoke;
+    --surface2: white;
+    --surface3: #e1e1e1;
+    --surface-reverse: #111111;
+    --text-color: #111111;
+    --text-color-reverse: white;
+    --link-color: cadetblue;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

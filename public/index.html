@@ -114,6 +114,11 @@
 					<button>colors/group/purple</button>
 					<button>colors/theme/dark</button>
 				</div>
+				<div class="try__response">
+					<pre>
+						<code class="language-json"></code>
+					</pre>
+				</div>
 			</div>
 		</header>
 		<main class="flow">
@@ -1756,35 +1761,6 @@
 			</div>
 		</footer>
 		<script src="./js/prism.js"></script>
-		<script>
-			// Copy Buttons
-			const buttons = document.querySelectorAll(".copy-btn");
-			const copyTexts = document.querySelectorAll(".copy-text");
-
-			buttons.forEach((button, index) => {
-				button.addEventListener("click", () => {
-					const copiedText = copyTexts[index].innerText;
-					navigator.clipboard.writeText(copiedText);
-					button.innerText = "copied";
-					setTimeout(function () {
-						button.innerText = "copy";
-					}, 1000);
-				});
-			});
-
-			// Try Button
-			const tryBtn = document.querySelector(".try button[type=submit]");
-			const tryInput = document.querySelector(".try input[type=text]");
-			const baseURL = "https://csscolorsapi.com/api/";
-			tryBtn.addEventListener("click", function (event) {
-				event.preventDefault();
-				const color = tryInput.value;
-				const url = baseURL + color;
-
-				fetch(url)
-					.then((response) => response.json())
-					.then((data) => console.log(data));
-			});
-		</script>
+		<script src="./js/script.js"></script>
 	</body>
 </html>
