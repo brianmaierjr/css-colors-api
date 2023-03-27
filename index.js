@@ -15,12 +15,11 @@
 // });
 
 const express = require("express");
-const app = express();
 let colorRepo = require("./repos/colorRepo");
 const path = require("path");
-
-// use cors to allow cross origin resource sharing
 const cors = require("cors");
+
+const app = express();
 app.use(cors());
 
 // /colors/ gets all colors

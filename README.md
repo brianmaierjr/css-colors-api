@@ -24,7 +24,7 @@ In my "Try it Out" section of my [site](https://csscolorsapi.com) I am analyzing
 
 Fetch is used to retrieve data on [147colors.com](https://147colors.com) for the main color list and individual color pages.
 
-## feature List 3
+## Feature List 3
 
 ### Create a node.js web server using a modern framework such as Express.js or Fastify. Serve at least one route that your app uses (must serve more than just the index.html file).
 
