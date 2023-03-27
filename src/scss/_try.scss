@@ -52,6 +52,11 @@
 	}
 
 	&__buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2xs);
+		justify-content: center;
+
 		button {
 			background-color: dodgerblue;
 			border-radius: var(--space-2xs);

@@ -204,6 +204,7 @@ header:before {
 header .wrapper {
   position: relative;
   z-index: 2;
+  overflow: auto;
 }
 
 footer {
@@ -295,6 +296,12 @@ footer:before {
   .try button {
     border-radius: 0 var(--space-2xs) var(--space-2xs) 0;
   }
+}
+.try__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  justify-content: center;
 }
 .try__buttons button {
   background-color: dodgerblue;
