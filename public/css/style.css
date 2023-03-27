@@ -215,27 +215,55 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+@media (min-width: 800px) {
+  .try {
+    flex-direction: row;
+  }
 }
 .try > * {
   padding: var(--space-2xs);
+  width: 100%;
+}
+@media (min-width: 800px) {
+  .try > * {
+    width: auto;
+  }
 }
 .try label {
   background-color: rgba(0, 0, 0, 0.2);
   color: lightgray;
-  border-radius: var(--space-2xs) 0 0 var(--space-2xs);
+  border-radius: var(--space-2xs) var(--space-2xs) 0 0;
+}
+@media (min-width: 800px) {
+  .try label {
+    border-radius: var(--space-2xs) 0 0 var(--space-2xs);
+  }
 }
 .try input {
   border: none;
 }
+@media (min-width: 800px) {
+  .try input {
+    flex: 1;
+  }
+}
 .try button {
   background-color: rebeccapurple;
   color: white;
-  border-radius: 0 var(--space-2xs) var(--space-2xs) 0;
   border: none;
   padding-inline: var(--space-m);
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 0 0 var(--space-2xs) var(--space-2xs);
+}
+@media (min-width: 800px) {
+  .try button {
+    border-radius: 0 var(--space-2xs) var(--space-2xs) 0;
+  }
 }
 .try__buttons button {
   background-color: dodgerblue;
