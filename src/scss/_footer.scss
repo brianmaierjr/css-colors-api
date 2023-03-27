@@ -1,4 +1,40 @@
 footer {
 	padding-block: var(--space-2xl-3xl);
 	text-align: center;
+	background-image: url("../img/header.svg");
+	background-size: 75em auto;
+	background-position: bottom center;
+	padding-block: calc(var(--space-2xl-3xl) * 2) var(--space-2xl-3xl);
+	min-height: 40vh;
+	text-align: center;
+	display: grid;
+	place-content: center;
+	position: relative;
+	color: white;
+
+	@media (min-width: 100em) {
+		background-size: 100em auto;
+	}
+
+	.flow {
+		position: relative;
+		z-index: 2;
+		text-align: center;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: 0;
+		background-image: linear-gradient(
+			to top,
+			rgba(0, 0, 0, 0),
+			var(--surface1)
+		);
+		display: block;
+		z-index: 1;
+	}
 }
