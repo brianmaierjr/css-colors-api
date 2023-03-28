@@ -250,6 +250,7 @@ footer:before {
   flex-wrap: wrap;
   flex-direction: column;
   font-size: var(--step--1);
+  margin-top: var(--flow-space, 1em);
 }
 @media (min-width: 800px) {
   .try {
@@ -323,6 +324,7 @@ footer:before {
 }
 .try__response {
   display: none;
+  width: 100%;
 }
 
 body {
@@ -341,7 +343,7 @@ a {
   width: min(100% - var(--space-l), 80rem);
   margin-inline: auto;
 }
-.wrapper--fullWidth {
+.wrapper--xl {
   width: min(100%, 125rem);
 }
 .wrapper--prose {

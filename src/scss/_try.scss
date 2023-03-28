@@ -5,6 +5,7 @@
 	flex-wrap: wrap;
 	flex-direction: column;
 	font-size: var(--step--1);
+	margin-top: var(--flow-space, 1em);
 
 	@media (min-width: 800px) {
 		flex-direction: row;
@@ -81,5 +82,6 @@
 
 	&__response {
 		display: none;
+		width: 100%;
 	}
 }

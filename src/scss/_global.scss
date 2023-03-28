@@ -15,7 +15,7 @@ a {
 	width: Min(calc(100% - var(--space-l)), 80rem);
 	margin-inline: auto;
 
-	&--fullWidth {
+	&--xl {
 		width: Min(100%, 125rem);
 	}
 
