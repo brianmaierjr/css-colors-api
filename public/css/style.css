@@ -249,6 +249,7 @@ footer:before {
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: column;
+  font-size: var(--step--1);
 }
 @media (min-width: 800px) {
   .try {
@@ -265,8 +266,8 @@ footer:before {
   }
 }
 .try label {
-  background-color: rgba(0, 0, 0, 0.2);
-  color: lightgray;
+  background-color: #bcbcbc;
+  color: #3e3e3e;
   border-radius: var(--space-2xs) var(--space-2xs) 0 0;
 }
 @media (min-width: 800px) {
